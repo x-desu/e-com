@@ -24,7 +24,6 @@ const PurchaseSuccessPage = () => {
         // Check if the session ID was already processed
         const processedSession = localStorage.getItem(`processed_${sessionId}`);
         if (processedSession) {
-          console.log("Session already processed.");
           return;
         }
 

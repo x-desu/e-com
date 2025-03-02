@@ -43,7 +43,6 @@ const EditProduct = () => {
     stock: product?.stock || "",
     images: product?.images?.length ? [...product.images] : [],
   });
-  console.log(newProduct);
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
