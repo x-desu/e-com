@@ -25,9 +25,9 @@ const __dirname = path.resolve();
 app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 
-// app.get("/", (req, res) => {
-//   res.json({ msg: "health check" });
-// });
+app.get("/", (req, res) => {
+  res.json({ msg: "health check" });
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/product", productRoutes);
@@ -54,5 +54,5 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
   connectDb();
-  console.log("server is running on port http://localhost:" + PORT);
+  console.log("server is running on :" + process.env.CLIENT_URL + PORT);
 });
